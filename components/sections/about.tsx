@@ -53,9 +53,8 @@ export default function About() {
               About Me
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Informatics student with a strong passion for technology and web
-              development. Ready to contribute to development teams and
-              continuously learn for technological advancement.
+              Computer Science graduate specializing in production-grade Full Stack development and AI integration. 
+              I am driven by the challenge of building intelligent, scalable web systems that solve complex, real-world business problems.
             </p>
           </div>
         </AnimatedSection>
@@ -99,7 +98,7 @@ export default function About() {
                     My Journey
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    As a high-achieving Informatics graduate (GPA 3.96) from Universitas Klabat, 
+                    As a Computer Science graduate from Universitas Klabat, 
                     my journey is driven by the desire to build systems that solve real-world problems. 
                     I transitioned from learning basic programming to architecting enterprise-scale applications independently during my internship at Manado Independent School.
                   </p>

@@ -89,7 +89,7 @@ export default function Hero() {
 
             <AnimatedSection animation="fadeInLeft" delay={400}>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl lg:max-w-none">
-                Informatics graduate specializing in production-grade Full Stack development (Laravel & React.js), AI integration, and server automation. I build intelligent systems that solve real business problems.
+                Computer Science graduate specializing in production-grade Full Stack development (Laravel & React.js), AI integration, and server automation. I build intelligent systems that solve real business problems.
               </p>
             </AnimatedSection>
 
@@ -110,7 +110,7 @@ export default function Hero() {
                   variant="outline"
                   size="lg"
                   className="px-8 py-3 border-2 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 transform hover:scale-105 transition-all duration-300"
-                  onClick={() => window.open('/dokumen/cv-deeva.pdf', '_blank')}
+                  onClick={() => window.open('/dokumen/CV_Deeva_Lolong.pdf', '_blank')}
                 >
                   Download CV
                 </Button>
