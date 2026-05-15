@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function Hero() {
   const [text, setText] = useState("");
-  const fullText = "Web Developer & Tech Enthusiast";
+  const fullText = "Full Stack Developer & AI Integrator";
 
   useEffect(() => {
     let index = 0;
@@ -89,9 +89,7 @@ export default function Hero() {
 
             <AnimatedSection animation="fadeInLeft" delay={400}>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl lg:max-w-none">
-                Informatics student passionate about technology and web
-                development. Experienced in building web systems and leading
-                development teams.
+                Informatics graduate specializing in production-grade Full Stack development (Laravel & React.js), AI integration, and server automation. I build intelligent systems that solve real business problems.
               </p>
             </AnimatedSection>
 
@@ -112,13 +110,9 @@ export default function Hero() {
                   variant="outline"
                   size="lg"
                   className="px-8 py-3 border-2 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 transform hover:scale-105 transition-all duration-300"
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                  onClick={() => window.open('/dokumen/cv-deeva.pdf', '_blank')}
                 >
-                  Get In Touch
+                  Download CV
                 </Button>
               </div>
             </AnimatedSection>

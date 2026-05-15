@@ -6,19 +6,19 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portofolio - Deeva Civia Aulia Lolong",
+  title: "Deeva Civia - Full Stack Developer & AI Enthusiast",
   description:
-    "Informatics student passionate about back-end development, experienced in PHP, MySQL, JavaScript, and project management. Currently pursuing Computer Science at Universitas Klabat.",
+    "Informatics graduate specializing in Full Stack web development (Laravel, React.js), AI integration, and server automation. Explore my portfolio and projects.",
   keywords:
-    "back-end developer, PHP, MySQL, JavaScript, web development, informatics student, project management",
+    "full stack developer, back-end developer, front-end developer, Laravel, React.js, Next.js, MySQL, AI integration, Gemini LLM, CI/CD, DevOps, software engineer, informatics graduate",
   authors: [{ name: "Deeva Civia Aulia Lolong" }],
   openGraph: {
-    title: "Deeva Civia Aulia Lolong - Back-End Developer",
+    title: "Deeva Civia Aulia Lolong - Full Stack Developer",
     description:
-      "Informatics student passionate about back-end development and project management",
+      "Portfolio of Deeva Civia, specializing in Full Stack development, AI integration, and production-grade applications.",
     type: "website",
   },
-  generator: "v0.dev",
+  generator: "Next.js",
 };
 
 export default function RootLayout({
