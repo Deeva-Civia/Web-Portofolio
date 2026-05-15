@@ -11,27 +11,27 @@ export default function About() {
   const highlights = [
     {
       icon: <Code className="w-8 h-8 text-blue-600" />,
-      title: "Web Development",
+      title: "Full Stack Development",
       description:
-        "Experienced in PHP, MySQL, and building web-based systems with deployment to public domains",
-    },
-    {
-      icon: <Users className="w-8 h-8 text-purple-600" />,
-      title: "Project Management",
-      description:
-        "Led six information system projects and managed teams of 40+ students in various initiatives",
+        "Building production-grade web systems from scratch using Laravel, React.js, and MySQL.",
     },
     {
       icon: <BookOpen className="w-8 h-8 text-green-600" />,
-      title: "Teaching & Mentoring",
+      title: "AI Integration & ML",
       description:
-        "JavaScript Bootcamp instructor and Python programming tutor for university students",
+        "Integrating Google Gemini API for smart reporting and building ResNet-50 models for image classification.",
     },
     {
       icon: <Trophy className="w-8 h-8 text-orange-600" />,
-      title: "Technical Expertise",
+      title: "DevOps & Server",
       description:
-        "Proficient in REST API, authentication, routing, and modern development tools",
+        "Configuring Ubuntu servers, cron jobs, and establishing CI/CD pipelines using Jenkins.",
+    },
+    {
+      icon: <Users className="w-8 h-8 text-purple-600" />,
+      title: "Leadership & Mentoring",
+      description:
+        "Coordinating university events and mentoring 30+ students in Python and JavaScript bootcamps.",
     },
   ];
 
@@ -99,18 +99,14 @@ export default function About() {
                     My Journey
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    As an Informatics student at Universitas Klabat, I've
-                    developed a strong foundation in back-end development
-                    through hands-on project experience and leadership roles. My
-                    journey includes building web systems, teaching programming
-                    concepts, and managing development teams.
+                    As a high-achieving Informatics graduate (GPA 3.96) from Universitas Klabat, 
+                    my journey is driven by the desire to build systems that solve real-world problems. 
+                    I transitioned from learning basic programming to architecting enterprise-scale applications independently during my internship at Manado Independent School.
                   </p>
                   <p className="text-gray-600 dark:text-gray-400">
-                    I'm particularly passionate about creating efficient,
-                    scalable solutions and sharing knowledge with fellow
-                    developers. My experience spans from database design to API
-                    development, always with a focus on clean code and best
-                    practices.
+                    I don't just write code, I look at the bigger picture. 
+                    Whether it's optimizing server analytics, automating database updates with schedulers, or integrating Large Language Models (LLM) to accelerate business processes, 
+                    I focus on delivering scalable, clean, and efficient solutions.
                   </p>
                 </div>
               </AnimatedSection>
@@ -118,34 +114,34 @@ export default function About() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                      6+
+                      3.96
                     </div>
                     <div className="text-gray-600 dark:text-gray-400">
-                      Projects Led
+                      Cumulative GPA
                     </div>
                   </div>
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">
-                      90+
+                      30+
                     </div>
                     <div className="text-gray-600 dark:text-gray-400">
-                      Students Managed
+                      Students Mentored
                     </div>
                   </div>
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">
-                      1+
+                      98%
                     </div>
                     <div className="text-gray-600 dark:text-gray-400">
-                      Years Experience
+                      ML Model Accuracy
                     </div>
                   </div>
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform duration-300">
-                      10+
+                      100%
                     </div>
                     <div className="text-gray-600 dark:text-gray-400">
-                      Technologies
+                      From Scratch Dev
                     </div>
                   </div>
                 </div>
