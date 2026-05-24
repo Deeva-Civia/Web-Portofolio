@@ -98,9 +98,9 @@ export default function About() {
                     My Journey
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    As a Computer Science graduate from Universitas Klabat, 
+                    As an Informatics (Computer Science) graduate from Universitas Klabat, 
                     my journey is driven by the desire to build systems that solve real-world problems. 
-                    I transitioned from learning basic programming to architecting enterprise-scale applications independently during my internship at Manado Independent School.
+                    I transitioned from learning basic programming to architecting enterprise-scale applications collaboratively within a cross-functional team during my internship at Manado Independent School.
                   </p>
                   <p className="text-gray-600 dark:text-gray-400">
                     I don't just write code, I look at the bigger picture. 
@@ -113,7 +113,7 @@ export default function About() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                      3.96
+                      3.95
                     </div>
                     <div className="text-gray-600 dark:text-gray-400">
                       Cumulative GPA
