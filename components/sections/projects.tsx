@@ -13,6 +13,11 @@ import {
   Database,
   Smartphone,
   FileText,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  Image as ImageIcon,
+  Globe 
 } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
@@ -20,14 +25,122 @@ import Image from "next/image";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(0);
-  const { ref: projectListRef, visibleItems } = useStaggeredAnimation(5, 150);
+  
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const projects = [
     {
+      title: "MISmart - AI-Powered Registration System",
+      period: "Jan 2026 - May 2026",
+      icon: <Zap className="w-8 h-8 text-blue-600" />,
+      images: [
+        "/images/projects/MISmart.png",
+        "/images/projects/mismart2.png", 
+        "/images/projects/mismart3.png",
+        "/images/projects/mismart4.png"
+      ],
+      description:
+        "An intelligent Natural Language to SQL (NL2SQL) module integrated into an enterprise-grade student registration system built entirely from scratch. It empowers administrators to generate dynamic data reports and daily recaps using natural language, eliminating manual spreadsheet processes and accelerating data-driven decision-making.",
+      technologies: [
+        "Laravel",
+        "React.js",
+        "MySQL",
+        "Gemini 2.5 Flash",
+        "Prompt Engineering", 
+        "Schema Linking", 
+      ],
+      features: [
+        "Optimized system latency with a hybrid architecture: utilizing direct SQL queries for standard daily recaps while routing dynamic requests to the LLM.",
+        "Engineered complex In-Context Learning prompts to map business logic across 20+ relational tables, enabling highly accurate Text-to-SQL generation.",
+        "Secured the AI pipeline with multi-layered defenses, including backend Regex validation and database-level execution restriction using a dedicated read-only (SELECT) user.",
+        "Implemented a secondary LLM pipeline to automatically process raw SQL query results into human-readable narrative interpretations on the frontend.",
+        "Built a dynamic client-side Excel generator in React that parses fluctuating JSON payloads from the AI into formatted matrix reports using complex conditional logic.",
+        "Developed smart conversation management with auto-generated chat titles based on the user's initial prompts."
+      ],
+      highlights: [
+        "AI Engineering (NL2SQL)",
+        "Advanced System Security",
+        "Business Automation",
+        "Complex Backend Logic",
+        "Frontend Data Processing",
+        "Performance Optimization"
+      ],
+      category: "AI & Full Stack Development",
+      showLiveDemo: false, 
+      showSourceCode: true,
+      liveLink: null,
+      sourceLink: "https://github.com/Deeva-Civia/Sistem-Informasi-Registrasi-Siswa",
+    },
+    {
+      title: "Poverty Classification via Satellite Imagery",
+      period: "Jan 2026 – May 2026",
+      icon: <Globe className="w-8 h-8 text-emerald-600" />,
+      images: [
+        "/images/projects/poverty-classification2.png",
+        "/images/projects/poverty-classification1.png"
+      ],
+      description:
+        "A research-grade deep learning initiative aligned with UN SDG 1 (No Poverty) to map socio-economic levels in La Paz, Bolivia. By leveraging complex spatial features from satellite imagery, this Computer Vision model provides a scalable, automated solution to identify impoverished regions, assisting policymakers in targeted resource distribution.",
+      technologies: [
+        "Python",
+        "ResNet-50",
+        "Computer Vision",
+        "Transfer Learning",
+        "Data Augmentation"
+      ],
+      features: [
+        "Developed a multi-class Computer Vision model using Python to classify regional poverty levels based on complex spatial features from satellite imagery.",
+        "Implemented a transfer learning-based ResNet-50 CNN architecture, fine-tuning the model for highly accurate feature extraction.",
+        "Mitigated data imbalance and prevented overfitting by integrating Global Average Pooling, Dropout layers, and algorithmic class weighting.",
+        "Engineered an end-to-end image processing pipeline with dynamic data augmentation to ensure model robustness.",
+        "Achieved an exceptional 98.67% overall accuracy and 0.99 F1-Score, demonstrating high reliability for real-world socio-economic mapping.",
+        "Directly supports UN Sustainable Development Goal 1 by providing a data-driven tool for targeted poverty alleviation efforts."
+      ],
+      highlights: [
+        "UN SDG 1 Alignment",
+        "Computer Vision",
+        "98.67% Accuracy",
+        "Deep Learning"
+      ],
+      category: "Machine Learning",
+      showLiveDemo: false, 
+      showSourceCode: true,
+      liveLink: null,
+      sourceLink: "https://github.com/Deeva-Civia/poverty-classification-resnet50",
+    },
+    {
+      title: "Attendance Web System",
+      period: "Jan – May 2025",
+      icon: <Database className="w-8 h-8 text-blue-600" />,
+      images: [
+        "/images/projects/attendance-web.png"
+      ],
+      description:
+        "A comprehensive multi-role web application for managing attendance with admin dashboard and statistics. The system was successfully deployed on the domain serenitystack.site using IDCloudHost as the hosting provider. Since the hosting subscription has expired, the project is now showcased through documentation and screenshots only.",
+      technologies: ["PHP", "MySQL", "HTML", "Bootstrap", "Hosting"],
+      features: [
+        "Multi-role login system (admin, lecturer, student)",
+        "Session-based authentication",
+        "CRUD features for attendance, lecturers, and students",
+        "Admin dashboard with statistics and summary",
+        "Responsive UI using Bootstrap framework",
+        "Deployed to public domain with manual hosting setup",
+      ],
+      highlights: ["Public Deployment", "Multi-Role System", "Real Statistics"],
+      category: "Web Development",
+      showLiveDemo: false,
+      showSourceCode: true,
+      liveLink: "https://serenitystack.site/finalProject/aimvc/public",
+      sourceLink: "https://github.com/Deeva-Civia/Attendance-Web-System",
+    },
+    {
       title: "Notes Web App",
-      period: "2024",
+      period: "Aug - Dec 2024",
       icon: <FileText className="w-8 h-8 text-indigo-600" />,
-      image: "/images/projects/note-web-app.png",
+      images: [
+        "/images/projects/note-web-app.png"
+      ],
       description:
         "A simple and intuitive note-taking application developed using React JS with Vite, offering fast performance and modern development experience.",
       technologies: ["React JS", "Vite", "CSS"],
@@ -48,36 +161,16 @@ export default function Projects() {
       sourceLink: "https://github.com/Deeva-Civia/Notes-Web-App",
     },
     {
-      title: "Attendance Web System",
-      period: "Jan – May 2025",
-      icon: <Database className="w-8 h-8 text-blue-600" />,
-      image: "/images/projects/attendance-web.png",
-      description:
-        "A comprehensive multi-role web application for managing attendance with admin dashboard and statistics. The system was successfully deployed on the domain serenitystack.site using IDCloudHost as the hosting provider. Since the hosting subscription has expired, the project is now showcased through documentation and screenshots only.",
-      technologies: ["PHP", "MySQL", "HTML", "Bootstrap", "Hosting"],
-      features: [
-        "Multi-role login system (admin, lecturer, student)",
-        "Session-based authentication",
-        "CRUD features for attendance, lecturers, and students",
-        "Admin dashboard with statistics and summary",
-        "Responsive UI using Bootstrap framework",
-        "Deployed to public domain with manual hosting setup",
-      ],
-      highlights: ["Public Deployment", "Multi-Role System", "Real Statistics"],
-      category: "Web Development",
-      showLiveDemo: true,
-      showSourceCode: true,
-      liveLink: "https://serenitystack.site/finalProject/aimvc/public",
-      sourceLink: "https://github.com/Deeva-Civia/Attendance-Web-System",
-    },
-    {
       title: "SafetyCity – AI Web App",
       period: "Jan – May 2025",
       icon: <Zap className="w-8 h-8 text-purple-600" />,
-      image: "/images/projects/safetycity.png",
+      images: [
+        "/images/projects/safetycity.png"
+      ],
       description:
         "AI-powered web application for infrastructure damage detection and automated reporting system.",
       technologies: [
+        "Lovable AI",
         "PHP",
         "Gemini 2.0 Flash",
         "WhatsApp Gateway",
@@ -103,7 +196,9 @@ export default function Projects() {
       title: "FiNotes – Student Notes App",
       period: "Jan – May 2025",
       icon: <Smartphone className="w-8 h-8 text-green-600" />,
-      image: "/images/projects/finotes.png",
+      images: [
+        "/images/projects/finotes.png"
+      ],
       description:
         "Mobile application for Computer Science students to organize and manage course notes efficiently.",
       technologies: ["React Native", "Firebase Firestore", "Firebase Auth"],
@@ -126,35 +221,24 @@ export default function Projects() {
       liveLink: null,
       sourceLink: "https://github.com/Deeva-Civia/FiNotes",
     },
-    {
-      title: "JavaScript Bootcamp",
-      period: "Jan – May 2025",
-      icon: <Users className="w-8 h-8 text-orange-600" />,
-      image: "/images/projects/bootcamp.png",
-      description:
-        "Comprehensive JavaScript programming course designed and taught for university students.",
-      technologies: [
-        "JavaScript",
-        "Async/Await",
-        "Fetch API",
-        "Project-based Learning",
-      ],
-      features: [
-        "Curriculum design from basic to advanced JavaScript",
-        "Asynchronous programming concepts",
-        "Hands-on coding exercises",
-        "Final project: ticket ordering system simulation",
-        "Student assessment and evaluation",
-        "Interactive learning sessions",
-      ],
-      highlights: ["Course Design", "Teaching Excellence", "Student Mentoring"],
-      category: "Education & Training",
-      showLiveDemo: false,
-      showSourceCode: false,
-      liveLink: null,
-      sourceLink: null,
-    },
   ];
+
+  const { ref: projectListRef, visibleItems } = useStaggeredAnimation(projects.length, 150);
+
+  // Handler untuk Lightbox Navigasi
+  const nextImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => 
+      prev === projects[selectedProject].images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? projects[selectedProject].images.length - 1 : prev - 1
+    );
+  };
 
   return (
     <section
@@ -162,7 +246,7 @@ export default function Projects() {
       className="py-20 bg-gradient-to-br from-white via-purple-50/30 to-blue-50/30 dark:from-gray-800 dark:via-purple-900/10 dark:to-blue-900/10 relative overflow-hidden"
     >
       {/* Background blur circles */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-40 left-10 w-72 h-72 bg-gradient-to-br from-blue-200/20 to-purple-200/20 dark:from-blue-600/10 dark:to-purple-600/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-40 right-10 w-80 h-80 bg-gradient-to-br from-purple-200/20 to-pink-200/20 dark:from-purple-600/10 dark:to-pink-600/10 rounded-full blur-3xl"></div>
       </div>
@@ -174,8 +258,7 @@ export default function Projects() {
               Featured Projects
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              A showcase of my development projects and technical leadership
-              experience
+              A showcase of my development projects
             </p>
           </div>
         </AnimatedSection>
@@ -199,7 +282,10 @@ export default function Projects() {
                         ? "ring-2 ring-blue-600 shadow-lg"
                         : "hover:shadow-md"
                     }`}
-                    onClick={() => setSelectedProject(index)}
+                    onClick={() => {
+                      setSelectedProject(index);
+                      setCurrentImageIndex(0); 
+                    }}
                     style={{ minHeight: "120px" }}
                   >
                     <CardContent className="p-6">
@@ -246,17 +332,28 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  {/* Project Image */}
-                  <div className="mb-6 rounded-lg overflow-hidden group">
+                  {/* Project Image - Clickable for Lightbox */}
+                  <div 
+                    className="mb-6 rounded-lg overflow-hidden group relative cursor-pointer"
+                    onClick={() => {
+                      setCurrentImageIndex(0);
+                      setIsLightboxOpen(true);
+                    }}
+                  >
                     <Image
-                      src={
-                        projects[selectedProject].image || "/placeholder.svg"
-                      }
+                      src={projects[selectedProject].images[0] || "/placeholder.svg"}
                       alt={projects[selectedProject].title}
-                      width={500}
-                      height={300}
-                      className="w-full h-60 object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                      width={800}
+                      height={500}
+                      className="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full flex items-center gap-2 font-medium">
+                        <ImageIcon className="w-5 h-5" />
+                        View Gallery ({projects[selectedProject].images.length})
+                      </span>
+                    </div>
                   </div>
 
                   <p className="text-gray-600 dark:text-gray-400">
@@ -290,7 +387,7 @@ export default function Projects() {
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
                       Key Features
                     </h4>
-                    <ul className="space-y-2 max-h-48 overflow-y-auto">
+                    <ul className="space-y-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
                       {projects[selectedProject].features.map(
                         (feature, index) => (
                           <li
@@ -371,6 +468,60 @@ export default function Projects() {
           </div>
         </div>
       </div>
+
+      {/* LIGHTBOX OVERLAY */}
+      {isLightboxOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 backdrop-blur-sm"
+          onClick={() => setIsLightboxOpen(false)} // Klik background untuk tutup
+        >
+          {/* Tombol Close */}
+          <button
+            onClick={() => setIsLightboxOpen(false)}
+            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors bg-black/50 p-2 rounded-full"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          {/* Tombol Kiri & Kanan (Hanya tampil jika foto lebih dari 1) */}
+          {projects[selectedProject].images.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-4 md:left-10 text-white/70 hover:text-white transition-colors bg-black/50 p-2 rounded-full hover:scale-110"
+              >
+                <ChevronLeft className="w-8 h-8 md:w-12 md:h-12" />
+              </button>
+              
+              <button
+                onClick={nextImage}
+                className="absolute right-4 md:right-10 text-white/70 hover:text-white transition-colors bg-black/50 p-2 rounded-full hover:scale-110"
+              >
+                <ChevronRight className="w-8 h-8 md:w-12 md:h-12" />
+              </button>
+            </>
+          )}
+
+          {/* Foto Utama Lightbox */}
+          <div 
+            className="relative max-w-5xl w-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()} // Mencegah foto ditutup saat diklik
+          >
+            <img
+              src={projects[selectedProject].images[currentImageIndex]}
+              alt={`${projects[selectedProject].title} - Image ${currentImageIndex + 1}`}
+              className="max-h-[85vh] w-auto object-contain rounded-lg shadow-2xl"
+            />
+            
+            {/* Indikator Nomor Halaman */}
+            {projects[selectedProject].images.length > 1 && (
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-white/80 font-medium tracking-widest bg-black/50 px-4 py-1 rounded-full">
+                {currentImageIndex + 1} / {projects[selectedProject].images.length}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

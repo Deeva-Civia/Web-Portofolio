@@ -25,13 +25,13 @@ export default function About() {
       icon: <Trophy className="w-8 h-8 text-orange-600" />,
       title: "DevOps & Server",
       description:
-        "Configuring Ubuntu servers, cron jobs, and establishing CI/CD pipelines using Jenkins.",
+        "Managed Ubuntu server deployments, automated cron jobs, and built CI/CD pipelines utilizing Jenkins.",
     },
     {
       icon: <Users className="w-8 h-8 text-purple-600" />,
       title: "Leadership & Mentoring",
       description:
-        "Coordinating university events and mentoring 30+ students in Python and JavaScript bootcamps.",
+        "Managed university event logistics and mentored 30+ students through intensive Python and JavaScript bootcamps.",
     },
   ];
 
@@ -52,9 +52,8 @@ export default function About() {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               About Me
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Computer Science graduate specializing in production-grade Full Stack development and AI integration. 
-              I am driven by the challenge of building intelligent, scalable web systems that solve complex, real-world business problems.
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
+              I am an Informatics graduate passionate about building robust systems from the ground up. I blend Full Stack Development with Artificial Intelligence to engineer scalable web solutions that actually solve real-world problems.
             </p>
           </div>
         </AnimatedSection>
@@ -98,14 +97,11 @@ export default function About() {
                     My Journey
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    As an Informatics (Computer Science) graduate from Universitas Klabat, 
-                    my journey is driven by the desire to build systems that solve real-world problems. 
-                    I transitioned from learning basic programming to architecting enterprise-scale applications collaboratively within a cross-functional team during my internship at Manado Independent School.
+                    I am an Informatics graduate from Universitas Klabat dedicated to building practical software solutions.
+                    My real growth started when I realized that coding isn't just about typing syntax, it's about building tools that make an impact. This mindset pushed me during my internship at Manado Independent School, where I collaborated with a cross-functional team to build an entire student registration system completely from scratch.
                   </p>
                   <p className="text-gray-600 dark:text-gray-400">
-                    I don't just write code, I look at the bigger picture. 
-                    Whether it's optimizing server analytics, automating database updates with schedulers, or integrating Large Language Models (LLM) to accelerate business processes, 
-                    I focus on delivering scalable, clean, and efficient solutions.
+                    Today, my focus bridges software engineering and artificial intelligence. Whether I am optimizing Ubuntu servers, integrating Google Gemini to accelerate data processes, or applying transfer learning with ResNet, my goal is always the same: to deliver clean, efficient, and scalable solutions. I am a fast learner, highly adaptable, and always ready for the next technical challenge.
                   </p>
                 </div>
               </AnimatedSection>

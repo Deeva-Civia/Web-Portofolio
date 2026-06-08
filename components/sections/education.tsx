@@ -26,8 +26,8 @@ export default function Education() {
     institution: "Universitas Klabat",
     degree: "Bachelor of Computer Science",
     major: "Informatics",
-    period: "Aug 2022 - Present",
-    status: "Current Student",
+    period: "Aug 2022 - May 2026",
+    status: "Graduated",
   };
 
   const certifications = [

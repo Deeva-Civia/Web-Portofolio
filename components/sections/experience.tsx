@@ -29,17 +29,11 @@ export default function Experience() {
         { name: "Postman", icon: <Users className="w-3 h-3" />, info: "API Testing" },
       ],
       responsibilities: [
-        "Collaborated within a 6-person cross-functional team using the Kanban methodology to architect and build a Student Registration Information System entirely from scratch.",
-        "Actively involved in the full SDLC, from brainstorming with stakeholders and system analysts, to backend execution, production deployment, and live bug fixing.",
-        "Architected backend infrastructure using Laravel, writing complex database queries and business logic in collaboration with a Database Engineer.",
-        "Accelerated the enrollment process by developing an auto-fill data history feature for returning students.",
-        "Integrated React.js frontend components with backend APIs, developing additional features to ensure a seamless user experience.",
-        "Optimized dashboard and analytics load times by implementing Laravel Caching and Event Listeners for intelligent, automated cache invalidation.",
-        "Automated student status updates (active/inactive) by configuring Cron Jobs on an Ubuntu server linked to Laravel Scheduler.",
-        "Secured institutional data access by building a strict Role-Based Access Control (RBAC) system for Admin-level authorities.",
-        "Conducted rigorous system and API testing using Postman prior to deployment, ensuring stable and bug-free frontend-backend integration.",
-        "Managed GitHub version control across multiple team branches, acting as the primary code merger, resolving merge conflicts, and executing direct deployments to the Ubuntu production server.",
-        "Troubleshot real-world production bugs reported by users, delivering rapid hotfixes to maintain system reliability."
+        "Executed the full SDLC of a Student Registration System entirely from scratch within a 6-person team, utilizing Kanban methodology from stakeholder brainstorming to final deployment.",        
+        "Engineered backend infrastructure with Laravel, writing complex database queries and business logic, and integrated React.js frontend components with a strict Role-Based Access Control (RBAC).",        
+        "Optimized dashboard performance and accelerated enrollment by implementing intelligent Laravel Caching for automated cache invalidation and an auto-fill data history feature.",        
+        "Automated student enrollment status updates based on the academic year by configuring Ubuntu Cron Jobs seamlessly linked to Laravel Scheduler.",
+        "Acted as the primary code merger via GitHub to resolve merge conflicts, conducted Postman testing, and troubleshot real-world production bugs reported by users to deploy rapid hotfixes on an Ubuntu server."
       ],
       highlights: [
         "Full SDLC Experience",
@@ -109,7 +103,7 @@ export default function Experience() {
     },
     {
       title: "Group PIC",
-      organization: "Filkom Day Committee",
+      organization: "Filkom Day 2024 Committee",
       period: "Aug – Sep 2024",
       icon: <Award className="w-6 h-6 text-green-600" />,
       responsibilities: [
@@ -120,7 +114,8 @@ export default function Experience() {
       ],
       highlights: ["40+ Team Members", "Event Success", "Team Coordination"],
       images: [
-         { src: "/images/experience/filkom-day.jpg", alt: "Filkom Day group coordination" },
+         { src: "/images/experience/filkomday1.jpeg", alt: "Filkom Day Committee" },
+         { src: "/images/experience/filkomday2.jpeg", alt: "Filkom Day Committee" },
       ]
     },
   ];
