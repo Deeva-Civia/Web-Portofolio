@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function Hero() {
   const [text, setText] = useState("");
-  const fullText = "Full Stack Developer & AI Integrator";
+  const fullText = "Full Stack & AI Developer";
 
   useEffect(() => {
     let index = 0;
@@ -89,10 +89,9 @@ export default function Hero() {
 
             <AnimatedSection animation="fadeInLeft" delay={400}>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl lg:max-w-none">
-                Computer Science graduate specializing in production-grade Full Stack development (Laravel & React.js), AI integration, and server automation. I build intelligent systems that solve real business problems.
+                Building scalable web systems from the ground up and automating workflows with AI. I transform complex business challenges into seamless, production-ready digital experiences.
               </p>
             </AnimatedSection>
-
             <AnimatedSection animation="fadeInLeft" delay={600}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
                 <Button

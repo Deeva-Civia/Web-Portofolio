@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Menu, X, Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -10,6 +10,7 @@ const navItems = [
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+  { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -17,9 +18,10 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const [isDark, setIsDark] = useState(false)
+  
+  const isManualScrolling = useRef(false)
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem("theme")
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
 
@@ -42,30 +44,61 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.substring(1))
-      const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
-      if (currentSection) {
-        setActiveSection(currentSection)
-      }
-    }
+      if (isManualScrolling.current) return;
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      const sections = navItems.map((item) => item.href.substring(1));
+      let foundSection = null;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          
+          if (rect.top <= window.innerHeight / 3 && rect.bottom >= 100) {
+            foundSection = section;
+          }
+        }
+      }
+
+      if (window.innerHeight + Math.round(window.scrollY) >= document.body.offsetHeight - 20) {
+        foundSection = sections[sections.length - 1]; 
+      }
+
+      if (foundSection) {
+        setActiveSection((prevSection) => {
+          if (prevSection !== foundSection) {
+            return foundSection;
+          }
+          return prevSection;
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    setTimeout(() => {
+      handleScroll();
+    }, 100);
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
-    const element = document.getElementById(href.substring(1))
+    const targetId = href.substring(1);
+    
+    isManualScrolling.current = true;
+    
+    setActiveSection(targetId);
+    
+    const element = document.getElementById(targetId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
     setIsOpen(false)
+
+    setTimeout(() => {
+      isManualScrolling.current = false;
+    }, 800);
   }
 
   return (

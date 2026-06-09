@@ -6,16 +6,15 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Deeva Civia - Full Stack Developer & AI Enthusiast",
+  title: "Deeva Civia - Full Stack & AI Developer",
   description:
-    "Informatics graduate specializing in Full Stack web development (Laravel, React.js), AI integration, and server automation. Explore my portfolio and projects.",
+    "Informatics graduate specializing in Full Stack web development (Laravel, React.js), AI-powered applications, and Machine Learning. Explore my portfolio and projects.",
   keywords:
-    "full stack developer, back-end developer, front-end developer, Laravel, React.js, Next.js, MySQL, AI integration, Gemini LLM, CI/CD, DevOps, software engineer, informatics graduate",
-  authors: [{ name: "Deeva Civia Aulia Lolong" }],
+    "full stack developer, AI developer, machine learning, back-end developer, front-end developer, Laravel, React.js, Next.js, MySQL, Gemini LLM, Prompt Engineering, CI/CD, software engineer",  authors: [{ name: "Deeva Civia Aulia Lolong" }],
   openGraph: {
-    title: "Deeva Civia Aulia Lolong - Full Stack Developer",
+    title: "Deeva Civia Aulia Lolong - Full Stack & AI Developer",
     description:
-      "Portfolio of Deeva Civia, specializing in Full Stack development, AI integration, and production-grade applications.",
+      "Portfolio of Deeva Civia, specializing in Full Stack development, AI engineering, and production-grade applications.",
     type: "website",
   },
   generator: "Next.js",

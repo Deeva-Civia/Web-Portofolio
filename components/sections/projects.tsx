@@ -17,7 +17,8 @@ import {
   ChevronRight,
   X,
   Image as ImageIcon,
-  Globe 
+  Globe,
+  Server 
 } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { useStaggeredAnimation } from "@/hooks/use-scroll-animation";
@@ -51,12 +52,12 @@ export default function Projects() {
         "Schema Linking", 
       ],
       features: [
-        "Optimized system latency with a hybrid architecture: utilizing direct SQL queries for standard daily recaps while routing dynamic requests to the LLM.",
-        "Engineered complex In-Context Learning prompts to map business logic across 20+ relational tables, enabling highly accurate Text-to-SQL generation.",
-        "Secured the AI pipeline with multi-layered defenses, including backend Regex validation and database-level execution restriction using a dedicated read-only (SELECT) user.",
-        "Implemented a secondary LLM pipeline to automatically process raw SQL query results into human-readable narrative interpretations on the frontend.",
-        "Built a dynamic client-side Excel generator in React that parses fluctuating JSON payloads from the AI into formatted matrix reports using complex conditional logic.",
-        "Developed smart conversation management with auto-generated chat titles based on the user's initial prompts."
+        "Automated daily registration recaps via low-latency hybrid routing",        
+        "Dynamic Text-to-SQL generation (Schema Linking & Few-Shot) across 20+ tables",        
+        "Multi-layered AI security (Regex validation & Read-Only user)",
+        "Automated raw SQL to human-readable narrative interpretation",
+        "Dynamic client-side Excel matrix generation using React",
+        "Auto-generated smart conversation titles"
       ],
       highlights: [
         "AI Engineering (NL2SQL)",
@@ -90,12 +91,12 @@ export default function Projects() {
         "Data Augmentation"
       ],
       features: [
-        "Developed a multi-class Computer Vision model using Python to classify regional poverty levels based on complex spatial features from satellite imagery.",
-        "Implemented a transfer learning-based ResNet-50 CNN architecture, fine-tuning the model for highly accurate feature extraction.",
-        "Mitigated data imbalance and prevented overfitting by integrating Global Average Pooling, Dropout layers, and algorithmic class weighting.",
-        "Engineered an end-to-end image processing pipeline with dynamic data augmentation to ensure model robustness.",
-        "Achieved an exceptional 98.67% overall accuracy and 0.99 F1-Score, demonstrating high reliability for real-world socio-economic mapping.",
-        "Directly supports UN Sustainable Development Goal 1 by providing a data-driven tool for targeted poverty alleviation efforts."
+        "Multi-class spatial feature classification from satellite imagery",
+        "Transfer learning implementation using ResNet-50 CNN",
+        "Overfitting prevention via Global Average Pooling, Dropout, and Class Weighting",
+        "End-to-end data pipeline with dynamic image augmentation",
+        "High-reliability performance (98.67% Accuracy, 0.99 F1-Score)",
+        "Direct alignment with UN SDG 1 (No Poverty)"
       ],
       highlights: [
         "UN SDG 1 Alignment",
@@ -108,6 +109,45 @@ export default function Projects() {
       showSourceCode: true,
       liveLink: null,
       sourceLink: "https://github.com/Deeva-Civia/poverty-classification-resnet50",
+    },
+    {
+      title: "DevOps CI/CD & AI SecOps Monitoring",
+      period: "Jan 2026 – May 2026",
+      icon: <Server className="w-8 h-8 text-slate-700 dark:text-slate-300" />,
+      images: [
+        "/images/projects/devops-architecture.png", 
+        "/images/projects/jenkins-pipeline.png",    
+        "/images/projects/wa-alert.png",            
+      ],
+      description:
+        "A robust DevOps infrastructure setup featuring a fail-safe CI/CD pipeline and an innovative AI-driven server monitoring system. It automates testing, deployments, and database backups while leveraging LLMs to detect and report server intrusions in real-time via WhatsApp.",
+      technologies: [
+        "Jenkins",
+        "Ubuntu Server",
+        "Apache",
+        "Gemini 2.5 Flash",
+        "Bash Scripting",
+        "Fonnte API"
+      ],
+      features: [
+        "Fail-safe CI/CD pipeline using Jenkins triggered by GitHub webhooks",
+        "Automated pre-deployment testing for React and Laravel",
+        "7-day rolling retention policy for automated database backups",
+        "Real-time server log analysis using Gemini 2.5 Flash AI",
+        "Instant WhatsApp security alerts via Fonnte Gateway",
+        "Ubuntu Apache server hardening (UFW, SSL, strict .htaccess)"
+      ],
+      highlights: [
+        "CI/CD Pipeline",
+        "AI SecOps",
+        "Server Hardening",
+        "Automated Testing"
+      ],
+      category: "DevOps & Security",
+      showLiveDemo: false, 
+      showSourceCode: true,
+      liveLink: null,
+      sourceLink: "https://github.com/Deeva-Civia/DevOps-Monitoring",
     },
     {
       title: "Attendance Web System",
@@ -168,28 +208,32 @@ export default function Projects() {
         "/images/projects/safetycity.png"
       ],
       description:
-        "AI-powered web application for infrastructure damage detection and automated reporting system.",
+        "A rapid prototype web application for infrastructure damage detection. Built utilizing Lovable AI for AI-assisted development (vibe coding), this project demonstrates the ability to architect system logic, engineer effective prompts, and integrate third-party APIs to deliver a functional MVP (Minimum Viable Product) in record time.",
       technologies: [
         "Lovable AI",
         "PHP",
-        "Gemini 2.0 Flash",
+        "Gemini 2.0 Flash API",
         "WhatsApp Gateway",
         "Fonnte API",
+        "Rapid Prototyping"
       ],
       features: [
-        "AI-based infrastructure damage detection",
-        "Real-time image analysis using Gemini 2.0 Flash",
-        "Automated WhatsApp notifications via Fonnte API",
-        "Real-time camera integration",
-        "Automatic reporting system",
-        "Direct notification system for stakeholders",
+        "AI-assisted rapid prototyping using Lovable AI",
+        "Real-time infrastructure damage detection via Gemini Vision",
+        "Automated stakeholder notifications via WhatsApp Gateway",
+        "Direct real-time camera capture integration",
+        "Streamlined automated reporting workflows"
       ],
-      highlights: ["AI Integration", "Real-time Analysis", "Team Leadership"],
-      category: "AI & Machine Learning",
+      highlights: [
+        "AI-Assisted Development",
+        "API Integration",
+        "Rapid Prototyping",
+        "System Architecture"
+      ],
+      category: "AI & Web Development",
       showLiveDemo: true,
       showSourceCode: true,
-      liveLink:
-        "https://preview-510ed91e--infrastruktur-vision-mina.lovable.app/",
+      liveLink: "https://preview-510ed91e--infrastruktur-vision-mina.lovable.app/",
       sourceLink: "https://github.com/Deeva-Civia/SafetyCity-Web",
     },
     {
@@ -457,7 +501,9 @@ export default function Projects() {
                           }}
                         >
                           <Github className="w-4 h-4 mr-2" />
-                          Source Code
+                            {projects[selectedProject].title === "DevOps CI/CD & AI SecOps Monitoring" 
+                              ? "Monitoring Script" 
+                              : "Source Code"}
                         </Button>
                       )}
                     </div>
