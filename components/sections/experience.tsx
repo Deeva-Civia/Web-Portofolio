@@ -258,7 +258,6 @@ export default function Experience() {
                               fill
                               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 20vw, 15vw"
                               className="object-cover transition-transform duration-300 group-hover/img:scale-110"
-                              unoptimized
                             />
                             {/* Overlay hover */}
                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2 text-center">

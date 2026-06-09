@@ -302,7 +302,6 @@ export default function Education() {
                             fill
                             className="object-contain drop-shadow-md"
                             priority={cert.id === certifications[0].id}
-                            unoptimized
                           />
                         </div>
                       ) : (

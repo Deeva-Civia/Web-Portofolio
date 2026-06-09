@@ -37,9 +37,9 @@ export default function Projects() {
       icon: <Zap className="w-8 h-8 text-blue-600" />,
       images: [
         "/images/projects/MISmart.png",
-        "/images/projects/mismart2.png", 
-        "/images/projects/mismart3.png",
-        "/images/projects/mismart4.png"
+        "/images/projects/MISmart2.png", 
+        "/images/projects/MISmart3.png",
+        "/images/projects/MISmart4.png"
       ],
       description:
         "An intelligent Natural Language to SQL (NL2SQL) module integrated into an enterprise-grade student registration system built entirely from scratch. It empowers administrators to generate dynamic data reports and daily recaps using natural language, eliminating manual spreadsheet processes and accelerating data-driven decision-making.",
@@ -390,7 +390,6 @@ export default function Projects() {
                       width={800}
                       height={500}
                       className="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      unoptimized
                     />
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
